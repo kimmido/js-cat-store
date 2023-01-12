@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "Cafe24Dongdong";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #444;
+  font-size: 16px;
+  font-family: Cafe24Dongdong;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+input, textarea, button, select, pre {
+  font-family: inherit;
+}
+
+ul, ol {
+  list-style: none;
+  -webkit-padding-start: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #444;
+}
+
+.click {
+  cursor: pointer;
+}
+.click * {
+  pointer-events: none;
+}
+
+address {
+  font-style: normal;
+}
+
+button {
+  border: 0;
+  background: transparent;
+}
+
+input:focus {
+  outline: none;
+}
+
+a, input, button, select, label {
+  cursor: pointer;
+}
+
+section > h2 {
+  display: none;
+}
+
+header, main, footer {
+  display: block;
+}
+
+.wrap .flex-wrap {
+  display: flex;
+  justify-content: space-around;
+}
+.wrap .flex-wrap .bill {
+  width: 30%;
+}
+.wrap .flex-wrap .store {
+  width: 70%;
+}
+.wrap .flex-wrap .store .cat {
+  width: 150px;
+}
+.wrap .flex-wrap .store .item-wrap {
+  width: 100%;
+  border: 3px solid #444;
+  border-radius: 5px;
+}/*# sourceMappingURL=index.css.map */

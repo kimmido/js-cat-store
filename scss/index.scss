@@ -1,0 +1,32 @@
+@charset "utf-8";
+@import './style.scss';
+@import './common.scss';
+@import './mixin.scss';
+
+
+.wrap {
+
+    .flex-wrap {
+        display: flex;
+        justify-content: space-around;
+
+        .bill {
+            width: 30%;
+
+        }
+
+        .store {
+            width: 70%;
+
+            .cat {
+                width: 150px;
+            }
+
+            .item-wrap {
+                width: 100%;
+                border: 3px solid $main-color;
+                border-radius: 5px;
+            }
+        }
+    } // flex-wrap
+}
