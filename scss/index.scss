@@ -5,28 +5,231 @@
 
 
 .wrap {
+    margin-top: 30px;
+    margin-bottom: 30px;
 
-    .flex-wrap {
+    h1 {
+        position: absolute;
+        right: 30px; top: 0;
+    }
+
+    .bill-store-flex {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
 
-        .bill {
+        table.bill {
             width: 30%;
+            border: 2px solid $main-color;
+            
+            th, td {
+                border: 1px solid lighten($main-color, 30);
+            }
+            
+            thead {
+                
+                th {
 
-        }
+                    &[scope=colgroup] {
+                        padding: 20px 0 10px;
+                        font-size: 34px;
+                    }
+
+                    &[scope=col] {
+                        padding: 15px 0 10px;
+
+                        &:first-child { width: 50%; }
+                        &:nth-child(2) { width: 30%; }
+                        &:last-child { width: 20%; }
+                    }
+                }
+            } // thead
+
+            tfoot, tbody {
+
+                tr > td {
+                    height: 40px;
+                    text-align: center;
+
+                    &:first-child {
+                        padding-left: 20px;
+                        text-align: left;
+                    }
+                }
+            }
+
+            tbody {
+                
+                tr {
+                    color: $main-color-ligth;
+
+                    &.on {
+                        color: $main-color;
+                    }
+
+                    th {
+                        font-weight: 400;
+                    }
+                }
+            }
+        } // table.bil
 
         .store {
-            width: 70%;
+            width: 65%;
 
             .cat {
-                width: 150px;
+                margin-top: 10px;
+                text-align: center;
+
+                img {
+                    width: 120px;
+                }
             }
 
             .item-wrap {
+                margin-top: 20px;
                 width: 100%;
-                border: 3px solid $main-color;
+                border: 2px solid $main-color;
                 border-radius: 5px;
-            }
+
+                ul#itemBox {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    
+                    li {
+                        position: relative;
+                        height: 150px;
+                        border: 1px solid salmon;
+                        text-align: center;
+                        
+                        &:first-child, &:nth-child(2) {
+                            flex: 50%;
+                        }
+                        
+                        &:nth-child(3), &:nth-child(4), &:last-child {
+                            flex: 33%;
+                        }
+                        
+                        .img {
+                            @include position_center();
+                            width: 130px;
+                            
+                            img {
+                                width: 100%;
+
+                                transition: transform .3s;
+
+                                &:hover {
+                                    transform: scale(0.8);
+                                }
+                            }
+                        }
+
+                        // p {
+                        //     position: absolute;
+                        //     left: 50%; bottom: 10px;
+                        //     transform: translateX(-50%);
+                        // }
+                    }
+                } // ul.item-box
+            } // item-wrap
+        } //store
+    } // bill-store-flex
+
+    .wallet {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        
+        .bt-box {
+            width: 30%; 
+
+            button {
+                width: 100%; height: 80px;
+                @include font_height(30px, 80px);
+                text-align: center;
+                color: $main-color-ligth;
+                border-radius: 5px;
+                border: 2px solid $main-color-ligth;
+                
+                &:hover {
+                    border-color: $main-color;
+                    color: $main-color;
+                }
+                
+                &:last-child {
+                    margin-top: 8px;
+                }
+            } // pay
         }
-    } // flex-wrap
+
+        #moneyWrap {
+            width: 65%;
+            display: flex;
+            justify-content: space-between;
+
+            .paper-money, .coin-area {
+                display: flex;
+                flex-wrap: wrap;
+
+                div {
+                    position: relative;
+                    border: 2px solid $main-color;
+
+                    &:nth-child(3), &:last-child {
+                        margin-top: 8px
+                    }
+
+                    span {
+                        @include position_center();
+                    }
+                }
+            }
+
+            .paper-money {
+                width: 70%;
+                justify-content: space-between;
+
+                div {
+                    width: 48%;
+                    border-radius: 3px;
+
+                    span {
+                        font-size: 30px;
+                    }
+                }
+            } // paper-money
+            
+            .coin-area{
+                width: 25%;
+                justify-content: space-around;
+                align-items: center;
+                
+                div {
+                    border-radius: 50%;
+                    aspect-ratio: 1 / 1;
+                    
+                    &.coin1 {
+                        @include square(70px);
+                    }
+
+                    &.coin2 {
+                        @include square(75px);
+                    }
+
+                    &.coin3 {
+                        @include square(85px);
+                    }
+
+                    &.coin4 {
+                        @include square(90px);
+                    }
+                    
+                    span {
+                        font-size: 24px;
+                    }
+                }
+            } // coin
+        }
+    } // wallet
 }

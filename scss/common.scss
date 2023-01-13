@@ -2,7 +2,6 @@
 @import './style.scss';
 @import './mixin.scss';
 
-// @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
 
 @font-face {
     font-family: 'Cafe24Dongdong';
@@ -19,10 +18,9 @@
 
 body {
     color: $main-color;
-    // letter-spacing: -0.04em;
     
     font: {
-        size: 16px;
+        size: 20px;
         family: $main-font
     }
 }
@@ -30,14 +28,17 @@ body {
 .container {
     position: relative;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 0 20px;
 }
 
 input, textarea, button, select, pre {
     font-family: inherit;
-    // letter-spacing: -0.04em;
+}
+
+table, th, td {
+    border-collapse: collapse;
 }
 
 

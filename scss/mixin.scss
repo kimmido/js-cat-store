@@ -11,15 +11,6 @@
     width: $size; height: $size;
 }
 
-// 탈그리드
-@mixin out_container() {
-    position: relative;
-    left: 50%; right: 50%;
-    width: 100vw;
-    margin-left: -50vw; 
-    margin-right: -50vw;
-}
-
 // 폰트 사이즈 + 줄간격
 @mixin font_height($size, $height: calc($size + 10px)) {
     font-size: $size;

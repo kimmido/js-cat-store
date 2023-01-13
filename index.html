@@ -5,49 +5,135 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
+    <script type="text/javascript" src="./js/index.js"></script>
     <title>고양이 상점</title>
 </head>
 <body>
     <div class="wrap">
         <div class="container">
             <h1>고양이 상점</h1>
-            <div class="flex-wrap">
-                <div class="bill">
-                    <strong>계산서</strong>
-                    <ul class="menu-list">
-                        <li>
+            <div class="bill-store-flex">
+                <table class="bill">
+                    <thead>
+                        <tr>
+                            <th colspan="3" scope="colgroup">계산서</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">품목</th>
+                            <th scope="col">가격</th>
+                            <th scope="col">수량</th>
+                        </tr>
+                    </thead>
 
-                        </li>
-                    </ul>
-                    <ul class="calculate">
-                        <li>                        
-                            <span class="cash"></span>
-                        </li>
-                        <li>
-                            <span class="total"></span>
-                        </li>
-                        <li>
-                            <span class="change"></span>
-                        </li>
-                    </ul>
-                </div>
+                    <tfoot>
+                        <tr>
+                            <th scope="row">총 금액</td>
+                            <td id="total">0</td>
+                            <td id="sum">0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">지불 금액</td>
+                            <td id="cash">0</td>
+                            <td>/</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">거스름 돈</td>
+                            <td id="change">0</td>
+                            <td>/</td>
+                        </tr>
+                    </tfoot>
+                    
+                    <tbody>
+                        <tr>
+                            <th scope="row">스크래쳐</th>
+                            <td class="price">13890</td>
+                            <td class="qty">0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">츄르</th>
+                            <td class="price">25000</td>
+                            <td class="qty">0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">쥐돌이</th>
+                            <td class="price">500</td>
+                            <td class="qty">0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">깃털 낚시대</th>
+                            <td class="price">2700</td>
+                            <td class="qty">0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">숨숨박스</th>
+                            <td class="price">33330</td>
+                            <td class="qty">0</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table><!--bill-->
+
                 <div class="store">
                     <div class="cat">
                         <img src="./images/cat.svg" alt="상점주인 고양이">
                     </div>
                     <div class="item-wrap">
-                        <ul class="item-box">
+                        <ul id="itemBox">
                             <li>
-                                <img src="" alt="">
+                                <div class="img">
+                                    <img class="click" src="./images/scratcher.jpg" alt="스크래쳐">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <img class="click" src="./images/toy_rat.svg" alt="츄르">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <img class="click" src="./images/toy_rat.svg" alt="쥐돌이">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <img class="click" src="./images/scratcher.jpg" alt="깃털 낚시대">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <img class="click" src="./images/scratcher.jpg" alt="숨숨박스">
+                                </div>
                             </li>
                         </ul>
                     </div>
-                    <div class="wallet">
-                        <div class="pay"></div>
-                        <div class="money-wrap">
-                            <div class="paper-money"></div>
-                            <div class="coin"></div>
-                        </div>
+                </div><!--store-->
+            </div><!--bill-store-flex-->
+            <div class="wallet">
+                <div class="bt-box">
+                    <button id="pay" class="click">지불하기</button>
+                    <button id="reset" class="click">다시하기</button>
+                </div>
+                <div id="moneyWrap">
+                    <div class="paper-money">
+                        <div class="money click"><span>1000</span></div>
+                        <div class="money click"><span>5000</span></div>
+                        <div class="money click"><span>10000</span></div>
+                        <div class="money click"><span>50000</span></div>
+                    </div>
+                    <div class="coin-area">
+                        <div class="coin1 click"><span>10</span></div>
+                        <div class="coin2 click"><span>50</span></div>
+                        <div class="coin3 click"><span>100</span></div>
+                        <div class="coin4 click"><span>500</span></div>
                     </div>
                 </div>
             </div>

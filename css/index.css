@@ -11,21 +11,25 @@
 }
 
 body {
-  color: #444;
-  font-size: 16px;
+  color: #555;
+  font-size: 20px;
   font-family: Cafe24Dongdong;
 }
 
 .container {
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 input, textarea, button, select, pre {
   font-family: inherit;
+}
+
+table, th, td {
+  border-collapse: collapse;
 }
 
 ul, ol {
@@ -36,7 +40,7 @@ ul, ol {
 a {
   display: inline-block;
   text-decoration: none;
-  color: #444;
+  color: #555;
 }
 
 .click {
@@ -71,21 +75,189 @@ header, main, footer {
   display: block;
 }
 
-.wrap .flex-wrap {
-  display: flex;
-  justify-content: space-around;
+.wrap {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-.wrap .flex-wrap .bill {
+.wrap h1 {
+  position: absolute;
+  right: 30px;
+  top: 0;
+}
+.wrap .bill-store-flex {
+  display: flex;
+  justify-content: space-between;
+}
+.wrap .bill-store-flex table.bill {
+  width: 30%;
+  border: 2px solid #555;
+}
+.wrap .bill-store-flex table.bill th, .wrap .bill-store-flex table.bill td {
+  border: 1px solid #a2a2a2;
+}
+.wrap .bill-store-flex table.bill thead th[scope=colgroup] {
+  padding: 20px 0 10px;
+  font-size: 34px;
+}
+.wrap .bill-store-flex table.bill thead th[scope=col] {
+  padding: 15px 0 10px;
+}
+.wrap .bill-store-flex table.bill thead th[scope=col]:first-child {
+  width: 50%;
+}
+.wrap .bill-store-flex table.bill thead th[scope=col]:nth-child(2) {
   width: 30%;
 }
-.wrap .flex-wrap .store {
-  width: 70%;
+.wrap .bill-store-flex table.bill thead th[scope=col]:last-child {
+  width: 20%;
 }
-.wrap .flex-wrap .store .cat {
-  width: 150px;
+.wrap .bill-store-flex table.bill tfoot tr > td, .wrap .bill-store-flex table.bill tbody tr > td {
+  height: 40px;
+  text-align: center;
 }
-.wrap .flex-wrap .store .item-wrap {
+.wrap .bill-store-flex table.bill tfoot tr > td:first-child, .wrap .bill-store-flex table.bill tbody tr > td:first-child {
+  padding-left: 20px;
+  text-align: left;
+}
+.wrap .bill-store-flex table.bill tbody tr {
+  color: #bbbbbb;
+}
+.wrap .bill-store-flex table.bill tbody tr.on {
+  color: #555;
+}
+.wrap .bill-store-flex table.bill tbody tr th {
+  font-weight: 400;
+}
+.wrap .bill-store-flex .store {
+  width: 65%;
+}
+.wrap .bill-store-flex .store .cat {
+  margin-top: 10px;
+  text-align: center;
+}
+.wrap .bill-store-flex .store .cat img {
+  width: 120px;
+}
+.wrap .bill-store-flex .store .item-wrap {
+  margin-top: 20px;
   width: 100%;
-  border: 3px solid #444;
+  border: 2px solid #555;
   border-radius: 5px;
+}
+.wrap .bill-store-flex .store .item-wrap ul#itemBox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.wrap .bill-store-flex .store .item-wrap ul#itemBox li {
+  position: relative;
+  height: 150px;
+  border: 1px solid salmon;
+  text-align: center;
+}
+.wrap .bill-store-flex .store .item-wrap ul#itemBox li:first-child, .wrap .bill-store-flex .store .item-wrap ul#itemBox li:nth-child(2) {
+  flex: 50%;
+}
+.wrap .bill-store-flex .store .item-wrap ul#itemBox li:nth-child(3), .wrap .bill-store-flex .store .item-wrap ul#itemBox li:nth-child(4), .wrap .bill-store-flex .store .item-wrap ul#itemBox li:last-child {
+  flex: 33%;
+}
+.wrap .bill-store-flex .store .item-wrap ul#itemBox li .img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 130px;
+}
+.wrap .bill-store-flex .store .item-wrap ul#itemBox li .img img {
+  width: 100%;
+  transition: transform 0.3s;
+}
+.wrap .bill-store-flex .store .item-wrap ul#itemBox li .img img:hover {
+  transform: scale(0.8);
+}
+.wrap .wallet {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.wrap .wallet .bt-box {
+  width: 30%;
+}
+.wrap .wallet .bt-box button {
+  width: 100%;
+  height: 80px;
+  font-size: 30px;
+  line-height: 80px;
+  text-align: center;
+  color: #bbbbbb;
+  border-radius: 5px;
+  border: 2px solid #bbbbbb;
+}
+.wrap .wallet .bt-box button:hover {
+  border-color: #555;
+  color: #555;
+}
+.wrap .wallet .bt-box button:last-child {
+  margin-top: 8px;
+}
+.wrap .wallet #moneyWrap {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+}
+.wrap .wallet #moneyWrap .paper-money, .wrap .wallet #moneyWrap .coin-area {
+  display: flex;
+  flex-wrap: wrap;
+}
+.wrap .wallet #moneyWrap .paper-money div, .wrap .wallet #moneyWrap .coin-area div {
+  position: relative;
+  border: 2px solid #555;
+}
+.wrap .wallet #moneyWrap .paper-money div:nth-child(3), .wrap .wallet #moneyWrap .paper-money div:last-child, .wrap .wallet #moneyWrap .coin-area div:nth-child(3), .wrap .wallet #moneyWrap .coin-area div:last-child {
+  margin-top: 8px;
+}
+.wrap .wallet #moneyWrap .paper-money div span, .wrap .wallet #moneyWrap .coin-area div span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrap .wallet #moneyWrap .paper-money {
+  width: 70%;
+  justify-content: space-between;
+}
+.wrap .wallet #moneyWrap .paper-money div {
+  width: 48%;
+  border-radius: 3px;
+}
+.wrap .wallet #moneyWrap .paper-money div span {
+  font-size: 30px;
+}
+.wrap .wallet #moneyWrap .coin-area {
+  width: 25%;
+  justify-content: space-around;
+  align-items: center;
+}
+.wrap .wallet #moneyWrap .coin-area div {
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+}
+.wrap .wallet #moneyWrap .coin-area div.coin1 {
+  width: 70px;
+  height: 70px;
+}
+.wrap .wallet #moneyWrap .coin-area div.coin2 {
+  width: 75px;
+  height: 75px;
+}
+.wrap .wallet #moneyWrap .coin-area div.coin3 {
+  width: 85px;
+  height: 85px;
+}
+.wrap .wallet #moneyWrap .coin-area div.coin4 {
+  width: 90px;
+  height: 90px;
+}
+.wrap .wallet #moneyWrap .coin-area div span {
+  font-size: 24px;
 }/*# sourceMappingURL=index.css.map */
