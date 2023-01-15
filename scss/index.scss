@@ -5,7 +5,7 @@
 
 
 .wrap {
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 30px;
 
     h1 {
@@ -47,7 +47,7 @@
             tfoot, tbody {
 
                 tr > td {
-                    height: 40px;
+                    height: 50px;
                     text-align: center;
 
                     &:first-child {
@@ -98,9 +98,8 @@
                     
                     li {
                         position: relative;
-                        height: 150px;
-                        border: 1px solid salmon;
-                        text-align: center;
+                        height: 180px;
+                        // border: 1px solid salmon;
                         
                         &:first-child, &:nth-child(2) {
                             flex: 50%;
@@ -109,10 +108,16 @@
                         &:nth-child(3), &:nth-child(4), &:last-child {
                             flex: 33%;
                         }
+
+                        &:first-child { .img { width: 170px; } }
+                        &:nth-child(2) { .img { width: 130px; } }
+                        &:nth-child(3) { .img { width: 130px; } }
+                        &:nth-child(4) { .img { width: 140px; } }
+                        &:nth-child(5) { .img { width: 120px; } }
                         
                         .img {
                             @include position_center();
-                            width: 130px;
+                            top: 45%;
                             
                             img {
                                 width: 100%;
@@ -125,11 +130,12 @@
                             }
                         }
 
-                        // p {
-                        //     position: absolute;
-                        //     left: 50%; bottom: 10px;
-                        //     transform: translateX(-50%);
-                        // }
+                        b {
+                            position: absolute;
+                            left: 50%; bottom: 10px;
+                            transform: translateX(-50%);
+                            font-weight: 500;
+                        }
                     }
                 } // ul.item-box
             } // item-wrap
