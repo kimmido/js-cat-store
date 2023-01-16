@@ -9,9 +9,15 @@ window.onload = function() {
     const change = document.getElementById("change");
 
     
-    let item;
-    let itemPrice = 0;
+    function numberReplace(element) {
+        let result = Number(element.innerText.replace(/,/g, ""));
+        return result;
+    }
+
+    
     let name;
+    let item;
+    let itemPrice;
     let totalPrice = 0;
     let totalQTY = 0;
 
@@ -33,36 +39,42 @@ window.onload = function() {
 
             item.classList.add("on");
 
-            itemPrice += Number(item.querySelector(".price").innerText);
-            item.querySelector(".qty").innerText++;
+            itemPrice = item.querySelector(".price");
+            totalPrice += numberReplace(itemPrice);
 
-            // totalPrice += Number(itemPrice);
+            itemQTY = Number(item.querySelector(".qty").innerText);
+            itemQTY += 1;
             totalQTY++;
             
-            total.innerText = itemPrice;
+            item.querySelector(".qty").innerText = itemQTY;
+            total.innerText = totalPrice.toLocaleString('ko-KR');
             sum.innerText = totalQTY;
             console.log(sum.innerText);
         }
     }
+    
 
 
     const moneyWrap = document.getElementById("moneyWrap");
     let money = 0;
-    // let money
+    let target;
 
     moneyWrap.addEventListener("click", function(e) {
-        console.log(e.target);
         if(e.target.matches(".click")) {
-            money += Number(e.target.querySelector("span").innerText);
-            cash.innerText = money;
+            target = e.target.querySelector(".num")
+            money += numberReplace(target);
+            cash.innerText = money.toLocaleString('ko-KR');
         }
     })
 
     moneyWrap.addEventListener("mouseover", function(e) {
         if(e.target.matches(".click")) {
-            e.target.querySelector(".txt").classList.add("on");
+            setTimeout(function() {
+                e.target.querySelector(".txt").classList.add("on");
+            }, 400)
         }
     })
+
     moneyWrap.addEventListener("mouseout", function(e) {
         if(e.target.matches(".click")) {
             e.target.querySelector(".txt").classList.remove("on");
@@ -70,12 +82,15 @@ window.onload = function() {
     })
 
 
+    
     const pay = document.getElementById("pay");
     
     pay.onclick = function() {
         if(Number(sum.innerText)) {
-            change.innerText = Number(cash.innerText) - Number(total.innerText);
-            if(change.innerText >= 0) {
+            let calc = Number(cash.innerText) - Number(total.innerText);
+            change.innerText = calc;
+
+            if(calc >= 0) {
                 alert("감사합니다. 또 방문해주세요");
             } else {
                 alert("금액이 부족합니다.");
@@ -92,7 +107,6 @@ window.onload = function() {
         billItem.forEach(item => {
             if(item.className == "on") {
                 item.classList.remove("on");
-                console.log(item.querySelector(".qty"))
                 item.querySelector(".qty").innerText = 0;
             }
         });
