@@ -181,13 +181,32 @@
                 div {
                     position: relative;
                     border: 2px solid $main-color;
-
+                
+                    transition: transform .8s;
+                    
                     &:nth-child(3), &:last-child {
                         margin-top: 8px
                     }
 
                     span {
                         @include position_center();
+
+                        &.txt {
+                            display: none;
+                            transform: translate(-50%, -50%) rotateX(180deg);
+
+                            &.on {
+                                display: block;
+                            }
+                        }
+                    }
+    
+                    &:hover {
+                        transform: rotateX(180deg);
+
+                        .num {
+                            display: none;
+                        }
                     }
                 }
             }
@@ -229,6 +248,20 @@
 
                     &.coin4 {
                         @include square(90px);
+                    }
+
+                    &:nth-child(odd) {
+
+                        .txt {
+                            width: 45px;
+                        }
+                    }
+
+                    &:nth-child(even) {
+
+                        .txt {
+                            width: 60px;
+                        }
                     }
                     
                     span {

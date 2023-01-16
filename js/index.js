@@ -50,13 +50,24 @@ window.onload = function() {
     let money = 0;
     // let money
 
-    moneyWrap.onclick = function(e) {
+    moneyWrap.addEventListener("click", function(e) {
         console.log(e.target);
         if(e.target.matches(".click")) {
             money += Number(e.target.querySelector("span").innerText);
             cash.innerText = money;
         }
-    }
+    })
+
+    moneyWrap.addEventListener("mouseover", function(e) {
+        if(e.target.matches(".click")) {
+            e.target.querySelector(".txt").classList.add("on");
+        }
+    })
+    moneyWrap.addEventListener("mouseout", function(e) {
+        if(e.target.matches(".click")) {
+            e.target.querySelector(".txt").classList.remove("on");
+        }
+    })
 
 
     const pay = document.getElementById("pay");
@@ -79,8 +90,11 @@ window.onload = function() {
 
     reset.onclick = function() {
         billItem.forEach(item => {
-            item.classList.remove("on");
-            item.querySelector(".qty").innerText = 0;
+            if(item.className == "on") {
+                item.classList.remove("on");
+                console.log(item.querySelector(".qty"))
+                item.querySelector(".qty").innerText = 0;
+            }
         });
         total.innerText = 0;
         sum.innerText = 0;
