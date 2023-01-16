@@ -245,16 +245,12 @@ header, main, footer {
 }
 .wrap .wallet #moneyWrap .paper-money div span.txt, .wrap .wallet #moneyWrap .coin-area div span.txt {
   display: none;
-  transform: translate(-50%, -50%) rotateX(180deg);
-}
-.wrap .wallet #moneyWrap .paper-money div span.txt.on, .wrap .wallet #moneyWrap .coin-area div span.txt.on {
-  display: block;
-}
-.wrap .wallet #moneyWrap .paper-money div:hover, .wrap .wallet #moneyWrap .coin-area div:hover {
-  transform: rotateX(180deg);
 }
 .wrap .wallet #moneyWrap .paper-money div:hover .num, .wrap .wallet #moneyWrap .coin-area div:hover .num {
   display: none;
+}
+.wrap .wallet #moneyWrap .paper-money div:hover .txt, .wrap .wallet #moneyWrap .coin-area div:hover .txt {
+  display: block;
 }
 .wrap .wallet #moneyWrap .paper-money {
   width: 70%;

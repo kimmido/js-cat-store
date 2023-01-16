@@ -66,29 +66,13 @@ window.onload = function() {
             cash.innerText = money.toLocaleString('ko-KR');
         }
     })
-
-    moneyWrap.addEventListener("mouseover", function(e) {
-        if(e.target.matches(".click")) {
-            setTimeout(function() {
-                e.target.querySelector(".txt").classList.add("on");
-            }, 400)
-        }
-    })
-
-    moneyWrap.addEventListener("mouseout", function(e) {
-        if(e.target.matches(".click")) {
-            e.target.querySelector(".txt").classList.remove("on");
-        }
-    })
-
-
     
     const pay = document.getElementById("pay");
     
     pay.onclick = function() {
         if(Number(sum.innerText)) {
-            let calc = Number(cash.innerText) - Number(total.innerText);
-            change.innerText = calc;
+            let calc = numberReplace(cash) - numberReplace(total);
+            change.innerText = calc.toLocaleString('ko-KR');
 
             if(calc >= 0) {
                 alert("감사합니다. 또 방문해주세요");

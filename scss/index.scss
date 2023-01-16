@@ -193,19 +193,17 @@
 
                         &.txt {
                             display: none;
-                            transform: translate(-50%, -50%) rotateX(180deg);
-
-                            &.on {
-                                display: block;
-                            }
                         }
                     }
     
                     &:hover {
-                        transform: rotateX(180deg);
 
                         .num {
                             display: none;
+                        }
+
+                        .txt {
+                            display: block;
                         }
                     }
                 }
